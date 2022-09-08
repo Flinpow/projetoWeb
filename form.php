@@ -19,6 +19,8 @@ function verifica_campo($texto){
   return $texto;
 }
 
+// TODO - Válidar se o campo tipo nao esta vazio e validação das senhas.
+
 ?>
  <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): 
   $user = $_POST['user'];
