@@ -9,7 +9,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating database: " . $conn->error;
 }
-$sql = "CREATE TABLE IF NOT EXISTS usuario (id int AUTO_INCREMENT primary key,nome varchar(30),email varchar(50),senha varchar(50),tipo int);";
+$sql = "CREATE TABLE IF NOT EXISTS usuarios (id int AUTO_INCREMENT primary key,nome varchar(30),email varchar(50),senha varchar(200),tipo int);";
 if (mysqli_query($conn, $sql)) {
     echo "<br>Table usuario created successfully";
 } else {

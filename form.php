@@ -8,7 +8,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <?php
-include_once "credentials.php";
+include_once "conn.php";
 
 function verifica_campo($texto){
   $texto = trim($texto);
@@ -44,11 +44,11 @@ function verifica_campo($texto){
           <?php 
             $user = verifica_campo($user);
             $email = verifica_campo($email);
-            $senha = password_hash($senha, PASSWORD_DEFAULT);
+            $senha = md5($senha); 
             
-            $conn = mysqli_connect($serverHost, $userName, $password, $dbName);
-             $sql = "INSERT INTO usuario (nome, email, senha, tipo) VALUES ('$user' , '$email'  ,
+             $sql = "INSERT INTO usuarios (nome, email, senha, tipo) VALUES ('$user' , '$email'  ,
              '$senha', '$tipo')";
+echo($senha);
              ?>
              <?php if (mysqli_query($conn, $sql)): ?> 
               <div class="alert alert-success">
@@ -108,11 +108,11 @@ function verifica_campo($texto){
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <label class="radio-inline">
-              <input type="radio" name="tipo" id="typeUserAdm" value="adm" > Administrador
+              <input type="radio" name="tipo" id="typeUserAdm" value="1" > Administrador
             </label>
 
             <label class="radio-inline">
-              <input type="radio" name="tipo" id="typeUserDef" value="usuário" > Usuário
+              <input type="radio" name="tipo" id="typeUserDef" value="0" > Usuário
             </label>
           </div>
         </div>
