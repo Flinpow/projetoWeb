@@ -1,12 +1,6 @@
 <?php
-include_once "credentials.php";
+require "conn.php";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
 // Create database
 $sql = "CREATE DATABASE IF NOT EXISTS $dbName";
@@ -15,8 +9,7 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error creating database: " . $conn->error;
 }
-$sql = "CREATE TABLE IF NOT EXISTS usuario (id int AUTO_INCREMENT primary key,nome varchar(30),email varchar(50),senha varchar(100),tipo varchar(15));";
-mysqli_select_db($conn, $dbName);
+$sql = "CREATE TABLE IF NOT EXISTS usuario (id int AUTO_INCREMENT primary key,nome varchar(30),email varchar(50),senha varchar(50),tipo int);";
 if (mysqli_query($conn, $sql)) {
     echo "<br>Table usuario created successfully";
 } else {
@@ -24,7 +17,6 @@ if (mysqli_query($conn, $sql)) {
 }
 // cria tabela das solicitações
 $sql = "CREATE TABLE IF NOT EXISTS solicitacoes (id int AUTO_INCREMENT primary key,tipo varchar(20), descricao varchar(100), status_solicitacao varchar(15) );";
-mysqli_select_db($conn, $dbName);
 
 if (mysqli_query($conn, $sql)) {
     echo "<br>Table solicitacoes created successfully";

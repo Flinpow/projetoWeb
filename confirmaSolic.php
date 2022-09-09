@@ -3,15 +3,15 @@
 //pagina que cria a solicitação. Pensei em fazer a pagina com uma 
 //mensagem de confirmação e dar as opções do usuário realizar uma nova solicitação 
 //OU vizualizar as suas (indo pra nossa pagina principal que ainda nao esta criada).
-include_once "credentials.php";
 
+
+require "conn.php";
 function verifica_campo($texto){
   $texto = trim($texto);
   $texto = stripslashes($texto);
   $texto = htmlspecialchars($texto);
   return $texto;
-
-
+}
 $type = $_POST["type"];
 $description = $_POST["description"];
 
@@ -19,10 +19,6 @@ $description = $_POST["description"];
 //TODO
 $type = verifica_campo($type);
 $description = verifica_campo($description);
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-mysqli_select_db($conn, $dbName);
 
 // Check connection
 if (!$conn) {
