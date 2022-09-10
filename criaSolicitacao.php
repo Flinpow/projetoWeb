@@ -1,3 +1,6 @@
+<?php
+include_once("verificaSession.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +22,8 @@
         <label for="tipo" class="col-sm-2 control-label">Tipo de Serviço</label>
         <div class="col-sm-10">
 	        <select required = "" id="tipo" name="type">
-                <option value="default">Selecione</option>
-		        <option value="Concerto">Concerto</option>
+                	<option disabled selected value="default" >Selecione</option>
+		        <option value="Conserto">Conserto</option>
 		        <option value="Instalação">Instalação</option>
 		        <option value="Limpeza">Limpeza</option>
 	        </select>

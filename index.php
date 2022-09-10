@@ -1,4 +1,5 @@
 <?php
+include_once("verificaSession.php");
 require "conn.php";
 if ($_GET['acao']='excluir' && isset($_GET['id'])){
 	$sql="DELETE FROM solicitacoes where id = ".$_GET['id']."";
@@ -27,9 +28,14 @@ if ($_GET['acao']='excluir' && isset($_GET['id'])){
         <th>ID</th>
         <th>Tipo</th>
         <th>Descrição</th>
+	<th>Usuário</th>
 	<th>Ação</th>
         <?php
-$sql="SELECT*FROM solicitacoes";
+if ($_SESSION['tipo'] == 1){
+	$sql="SELECT*FROM solicitacoes";
+}else if ($_SESSION['tipo'] == 0){
+	$sql="SELECT*FROM solicitacoes where usuario = '".$_SESSION['logado']."'";
+}
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -39,7 +45,10 @@ if (mysqli_num_rows($result) > 0) {
           <td><?= $row['id'] ?></td>
           <td><?= $row['tipo'] ?></td>
           <td><?= $row['descricao'] ?></td>
-	  <td><a href='index.php?acao=excluir&id=<?=$row['id']?>'>Excluir</a></td>
+	  <td><?= $row['usuario'] ?> </td>
+	  <td><a href='index.php?acao=excluir&id=<?=$row['id']?>'>Excluir</a>/<a href='alteraSoli.php?alterar=<?=$row['id']?>'>Alterar</a></td>
+
+
         </tr>
         <?php
     }
