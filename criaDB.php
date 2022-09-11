@@ -1,11 +1,19 @@
 <?php
-require "conn.php";
+require "credentials.php";
+$admPassword = md5('nimda');
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);  
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
 
 // Create database
 $sql = "CREATE DATABASE IF NOT EXISTS $dbName";
 if (mysqli_query($conn, $sql)) {
   echo "Database created successfully";
+  $conn = mysqli_connect($servername, $username, $password, $dbName);
 } else {
   echo "Error creating database: " . $conn->error;
 }
@@ -22,6 +30,12 @@ if (mysqli_query($conn, $sql)) {
     echo "<br>Table solicitacoes created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
+}
+$sql = "INSERT INTO usuarios(nome, usuario, email, senha, tipo) VALUES ('admin', 'admin', 'admin@gmail.com', '$admPassword', 1 );";
+if (mysqli_query($conn, $sql)) {
+  echo "<br>User administrador created successfully ";
+} else {
+  echo "Error adm user: " . mysqli_error($conn);
 }
 
 // Cria chave estrangeria nas solicitações para referenciar o usuario que as criou

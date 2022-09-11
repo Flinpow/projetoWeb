@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "ds122";
-$password = "123";
+$username = "root";
+$password = "root";
 $dbName = "projeto_web1";
 
 // Create connection

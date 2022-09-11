@@ -22,11 +22,11 @@ $id=$_POST['id'];
 
 $sql = "UPDATE solicitacoes SET tipo='$type',descricao='$description' where id = $id";
 if (mysqli_query($conn, $sql)) {
-	header("Location: index.php");
+	header("Location: mainPage.php");
 }else{
 ?>
  <div class="alert alert-danger">
-            o Tipo de conta é obrigatório!
+            o Tipo de serviço é obrigatório!
           </div>
 <?php
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['logado'])){
-	header("Location: index.php");
+	header("Location: mainPage.php");
 }
 ?>
 <!DOCTYPE html>
@@ -22,8 +22,6 @@ function verifica_campo($texto){
   return $texto;
 }
 
-// TODO - Válidar se o campo tipo nao esta vazio e validação das senhas.
-
 ?>
  <?php if ($_SERVER["REQUEST_METHOD"] == "POST"): 
   $user = $_POST['user'];
@@ -43,7 +41,7 @@ function verifica_campo($texto){
 
 		     $_SESSION['logado']=$row['usuario'];
 	    	     $_SESSION['tipo']=$row['tipo']; 
-		     header("Location: index.php");
+		     header("Location: mainPage.php");
 		}
 		     }else{
 		?>
@@ -61,16 +59,16 @@ function verifica_campo($texto){
           <?php endif; ?>
           <?php endif; ?>
 
-
+<body style= "background-color: #0d0d0d;">
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="page-header">Login</h1>
-
+      <h1 class="page-header" style="color: #999999">AskForHelp</h1>
+         <h3 style="color: #999999">Acesse a sua conta em nosso site</h3>
       <form id="userForm" class="form-horizontal" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
         <div class="form-group">
-          <label for="inputNome" class="col-sm-2 control-label">Usuário</label>
+          <label for="inputNome" class="col-sm-2 control-label" style="color: #999999">Usuário</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" required="" name="user" placeholder="Usuário" value="">
           </div>
@@ -78,7 +76,7 @@ function verifica_campo($texto){
 
 
         <div class="form-group">
-          <label for="inputSenha" class="col-sm-2 control-label">Senha</label>
+          <label for="inputSenha" class="col-sm-2 control-label" style="color: #999999">Senha</label>
           <div class="col-sm-10">
             <input type="password" class="form-control" required="" name="senha" placeholder="Senha" value="">
           </div>
@@ -86,11 +84,12 @@ function verifica_campo($texto){
 
 
         <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
+          <div style="color: #999999" class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Enviar</button>
+             Não possui uma conta? <a href="criaUsuario.php" >Registrar-se</a>
           </div>
-        </div>
-      </form>
+        </div>       
+      </form>     
     </div>
   </div>
 </div>

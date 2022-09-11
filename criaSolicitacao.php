@@ -10,30 +10,30 @@ include_once("verificaSession.php");
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
+<body style= "background-color: #0d0d0d;">
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="page-header">Cadastro de Solicitação</h1>
+      <h1 class="page-header" style="color: #999999">Em que podemos te ajudar?</h1>
 
       <form id="userForm" class="form-horizontal" method="POST" action="confirmaSolic.php">
       
       <div class="form-group">
-        <label for="tipo" class="col-sm-2 control-label">Tipo de Serviço</label>
+        <label for="tipo" class="col-sm-2 control-label" style="color: #999999">Tipo de Serviço</label>
         <div class="col-sm-10">
 	        <select required = "" id="tipo" name="type">
-                	<option disabled selected value="default" >Selecione</option>
-		        <option value="Conserto">Conserto</option>
+                	<option value="Conserto">Conserto</option>
+		        <option value="Detetização">Detetização</option>
 		        <option value="Instalação">Instalação</option>
 		        <option value="Limpeza">Limpeza</option>
 	        </select>
         </div>
        </div>
 
-        <div class="form-group">
-          <label for="description" class="col-sm-2 control-label">Descrição</label>
+        <div class="form-group" >
+          <label for="description" class="col-sm-2 control-label" style="color: #999999">Descrição</label>
           <div class="col-sm-10">
-            <textarea placeholder="Adicione uma breve descrição do problema" id="description" name="description" rows="4" cols="50"></textarea>
+            <textarea required="" placeholder="Adicione uma breve descrição do problema" id="description" name="description" rows="4" cols="50"></textarea>
           </div>
         </div>
 
