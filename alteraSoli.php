@@ -46,8 +46,8 @@ if (mysqli_query($conn, $sql)) {
   <div class="row">
     <div class="col-xs-12">
       <h1 class="page-header" style="color: #808080;">AskForHelp.com</h1>
-      <h2 style="color: #808080;">Solicitação</h2>
-      <br></br>
+      <h3  style="color: #999999">Em que podemos te ajudar?</h3>
+     
       <form id="userForm" class="form-horizontal" method="POST" action="">
       
       <div class="form-group">

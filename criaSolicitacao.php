@@ -14,7 +14,8 @@ include_once("verificaSession.php");
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="page-header" style="color: #999999">Em que podemos te ajudar?</h1>
+      <h1 class="page-header" style="color: #999999">AskForHelp.com</h1>
+      <h3  style="color: #999999">Em que podemos te ajudar?</h3>
 
       <form id="userForm" class="form-horizontal" method="POST" action="confirmaSolic.php">
       
