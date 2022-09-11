@@ -1,6 +1,7 @@
-# projetoWeb1 Thales Assis de Olivera e Natan Cervinski
-    Trabalho final de Desenvolvimento Web 1 
 
+ 
+#   Trabalho final de Desenvolvimento Web 1    
+    Feito por Thales Assis de Olivera e Natan Cervinski
 ## Desenvolvimento da aplicação de um site de cadastro de solicitações.
     O projeto basea-se em um banco de dados contendo duas tabelas, uma de usuários e outra de solicitações. São apresentadas para o usuário basicamente 4 telas:
         1.  Tela de Criação de usuário: consiste no preenchimento de um formulário onde o usuario fornece seu apelido, nome, email, senha e a confirmação da senha. As informações são válidadas e enviadas para o banco de dados através de um metodo POST, criando uma query e salvando-as no banco de dados.
