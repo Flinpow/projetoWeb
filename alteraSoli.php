@@ -41,16 +41,17 @@ if (mysqli_query($conn, $sql)) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
+<body style= "background-color: #0d0d0d;">
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="page-header">Alterar Solicitação</h1>
-
+      <h1 class="page-header" style="color: #808080;">AskForHelp.com</h1>
+      <h2 style="color: #808080;">Solicitação</h2>
+      <br></br>
       <form id="userForm" class="form-horizontal" method="POST" action="">
       
       <div class="form-group">
-        <label for="tipo" class="col-sm-2 control-label">Tipo de Serviço</label>
+        <label for="tipo" class="col-sm-2 control-label" style="color: #808080;">Tipo de Serviço</label>
         <div class="col-sm-10">
 	        <select required = "" id="tipo" name="type">
 			<option <?php if(!isset($_GET['alterar'])){echo('selected');}?>disabled value="" >Selecione</option>
@@ -62,7 +63,7 @@ if (mysqli_query($conn, $sql)) {
        </div>
 
         <div class="form-group">
-          <label for="description" class="col-sm-2 control-label">Descrição</label>
+          <label for="description" class="col-sm-2 control-label" style="color: #808080;">Descrição</label>
           <div class="col-sm-10">
 		  <textarea placeholder="Adicione uma breve descrição do problema" id="description" name="description" rows="4" cols="50"><?php if(isset($_GET['alterar'])){echo($row['descricao']);} ?></textarea>
           </div>
