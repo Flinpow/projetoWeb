@@ -29,7 +29,8 @@ if ($_GET['acao']='excluir' && isset($_GET['id'])){
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <meta charset="utf-8" />
     <title>AskForHelp.com</title>
-    <h2 style="color: #808080; text-align:center;"> Suas Solicitações</h2>
+    <h1 style="color: #808080; text-align:center;">AskForHelp.com</h1>
+    <h3 style="color: #808080; text-align:center;"> Suas Solicitações</h3>
   </head>
   <body style= "background-color: #0d0d0d;">
     <div class='container'>
