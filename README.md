@@ -9,6 +9,6 @@
 
         3.  Página principal: é a tela onde o usuário visualiza as suas solicitações em aberto podendo editar ou excluir as mesmas. A página fornece ao usuário, também, as opçoes de criar uma nova solicitação ou deslogar de sua conta.
 
-        4.  Página de cadastro de solicitação: é a tela onde o usuário faz a sua solicitação, informando à sua natureza (conserto, limpeza, instalação e etc.) e adicionando uma breve descrição sobre o problema.
+        4.  Página de cadastro de solicitação: é a tela onde o usuário faz a sua solicitação, informando à sua natureza (conserto, limpeza, instalação e etc.) e adicionando uma breve descrição sobre o problema enviando as informações através de um método POST onde tem suas informações válidadas e salvas no banco de dados.
 
         obs: cada usuário visualiza somente as suas solicitações, porém, o usuário administrador, criado juntamente com o banco de dados, tem acesso a todas as solicitações. 
