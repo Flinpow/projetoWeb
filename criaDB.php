@@ -31,6 +31,8 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
+
+//Criando usuário administrador
 $sql = "INSERT INTO usuarios(nome, usuario, email, senha, tipo) VALUES ('admin', 'admin', 'admin@gmail.com', '$admPassword', 1 );";
 if (mysqli_query($conn, $sql)) {
   echo "<br>User administrador created successfully ";
